@@ -5,6 +5,8 @@ export interface PropertySummary {
   id: string;
   name: string;
   code: string;
+  /** ISO 3166-1 alpha-2 country code (e.g. "BR"). Used to gate country-specific payment methods like PIX. */
+  countryCode?: string | null;
   organizationId?: string | null;
   staffDisplayName?: string | null;
   staffLogoMediaId?: string | null;

@@ -13,6 +13,8 @@ import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
 const PAYMENT_METHODS = [
   'credit_card',
   'debit_card',
+  'card_machine',
+  'pix',
   'cash',
   'bank_transfer',
   'city_ledger',

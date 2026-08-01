@@ -446,7 +446,8 @@ function SplitFolioPanel({
 function FolioDetail() {
   const { t } = useTranslation();
   const { id } = useParams<{ id: string }>();
-  const { propertyId } = useProperty();
+  const { propertyId, properties } = useProperty();
+  const isBrazil = properties.find((p) => p.id === propertyId)?.countryCode === 'BR';
   const navigate = useNavigate();
   const queryClient = useQueryClient();
   const { toast } = useToast();
@@ -838,8 +839,9 @@ function FolioDetail() {
           <div>
             <label className="block text-xs font-medium text-telivity-mid-grey mb-1">{t('folios.method')}</label>
             <select value={payMethod} onChange={(e) => setPayMethod(e.target.value)} className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-telivity-teal">
-              <option value="cash">{t('folios.paymentMethods.cash')}</option><option value="credit_card">{t('folios.paymentMethods.credit_card')}</option><option value="debit_card">{t('folios.paymentMethods.debit_card')}</option><option value="bank_transfer">{t('folios.paymentMethods.bank_transfer')}</option>
+              <option value="cash">{t('folios.paymentMethods.cash')}</option><option value="card_machine">{t('folios.paymentMethods.card_machine')}</option>{isBrazil && <option value="pix">{t('folios.paymentMethods.pix')}</option>}<option value="bank_transfer">{t('folios.paymentMethods.bank_transfer')}</option>
             </select>
+            <p className="text-xs text-telivity-mid-grey mt-1">{t('folios.recordPaymentCardHint')}</p>
           </div>
           <div>
             <label className="block text-xs font-medium text-telivity-mid-grey mb-1">{t('folios.amount')}</label>

@@ -123,6 +123,8 @@ export const charges = pgTable('charges', {
 export const paymentMethodEnum = pgEnum('payment_method', [
   'credit_card',
   'debit_card',
+  'card_machine',   // Credit/debit card processed on a physical in-person terminal (already settled, no gateway token)
+  'pix',            // Brazil instant payment system (Bacen) — settled, no gateway token
   'cash',
   'bank_transfer',
   'city_ledger',    // Transfer to A/R

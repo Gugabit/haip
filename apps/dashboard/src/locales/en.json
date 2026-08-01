@@ -455,9 +455,11 @@
     "open": "Open",
     "paymentMethods": {
       "bank_transfer": "Bank Transfer",
+      "card_machine": "Card (Machine)",
       "cash": "Cash",
       "credit_card": "Credit Card",
-      "debit_card": "Debit Card"
+      "debit_card": "Debit Card",
+      "pix": "PIX"
     },
     "paymentStatuses": {
       "captured": "Captured",
@@ -470,6 +472,7 @@
     "priority": "Priority",
     "record": "Record",
     "recordPayment": "Record Payment",
+    "recordPaymentCardHint": "Use \"Card (Machine)\" for cards processed on a physical terminal. Use Authorize Card for online / tokenized payments.",
     "refund": "Refund",
     "refundAmountOptional": "Amount (blank = full)",
     "refundFailed": "Refund failed",
@@ -851,10 +854,12 @@
     "openHouseAccount": "Open House Account",
     "paymentMethods": {
       "bankTransfer": "Bank Transfer",
+      "cardMachine": "Card (Machine)",
       "cash": "Cash",
       "creditCard": "Credit Card",
       "debitCard": "Debit Card",
-      "other": "Other"
+      "other": "Other",
+      "pix": "PIX"
     },
     "post": "Post",
     "postCharge": "Post Charge",

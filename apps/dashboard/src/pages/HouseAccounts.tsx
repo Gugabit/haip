@@ -292,7 +292,8 @@ function HouseAccountList() {
 function HouseAccountDetail() {
   const { t } = useTranslation();
   const { id } = useParams<{ id: string }>();
-  const { propertyId } = useProperty();
+  const { propertyId, properties } = useProperty();
+  const isBrazil = properties.find((p) => p.id === propertyId)?.countryCode === 'BR';
   const navigate = useNavigate();
   const queryClient = useQueryClient();
   const [chargeOpen, setChargeOpen] = useState(false);
@@ -418,6 +419,8 @@ function HouseAccountDetail() {
             <option value="cash">{t('houseAccounts.paymentMethods.cash')}</option>
             <option value="credit_card">{t('houseAccounts.paymentMethods.creditCard')}</option>
             <option value="debit_card">{t('houseAccounts.paymentMethods.debitCard')}</option>
+            <option value="card_machine">{t('houseAccounts.paymentMethods.cardMachine')}</option>
+            {isBrazil && <option value="pix">{t('houseAccounts.paymentMethods.pix')}</option>}
             <option value="bank_transfer">{t('houseAccounts.paymentMethods.bankTransfer')}</option>
             <option value="other">{t('houseAccounts.paymentMethods.other')}</option>
           </select>

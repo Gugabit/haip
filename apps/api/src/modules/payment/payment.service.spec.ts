@@ -131,6 +131,32 @@ describe('PaymentService', () => {
         }),
       ).rejects.toThrow(BadRequestException);
     });
+
+    it('should record card_machine payment (in-person terminal, not gateway-tokenized)', async () => {
+      const result = await service.recordPayment({
+        folioId: 'folio-001',
+        propertyId: 'prop-001',
+        method: 'card_machine',
+        amount: '150.00',
+        currencyCode: 'USD',
+      });
+
+      expect(result).toEqual(mockPayment);
+      expect(mockFolioService.recalculateBalance).toHaveBeenCalledWith('folio-001', 'prop-001');
+    });
+
+    it('should record pix payment', async () => {
+      const result = await service.recordPayment({
+        folioId: 'folio-001',
+        propertyId: 'prop-001',
+        method: 'pix',
+        amount: '150.00',
+        currencyCode: 'USD',
+      });
+
+      expect(result).toEqual(mockPayment);
+      expect(mockFolioService.recalculateBalance).toHaveBeenCalledWith('folio-001', 'prop-001');
+    });
   });
 
   describe('authorizePayment', () => {

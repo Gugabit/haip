@@ -17,9 +17,9 @@ export class ListPaymentsDto {
   @IsEnum(['pending', 'authorized', 'captured', 'settled', 'refunded', 'partially_refunded', 'failed', 'voided'])
   status?: string;
 
-  @ApiPropertyOptional({ enum: ['credit_card', 'debit_card', 'cash', 'bank_transfer', 'city_ledger', 'vcc', 'other'] })
+  @ApiPropertyOptional({ enum: ['credit_card', 'debit_card', 'card_machine', 'pix', 'cash', 'bank_transfer', 'city_ledger', 'vcc', 'other'] })
   @IsOptional()
-  @IsEnum(['credit_card', 'debit_card', 'cash', 'bank_transfer', 'city_ledger', 'vcc', 'other'])
+  @IsEnum(['credit_card', 'debit_card', 'card_machine', 'pix', 'cash', 'bank_transfer', 'city_ledger', 'vcc', 'other'])
   method?: string;
 
   @ApiPropertyOptional({ default: 1 })

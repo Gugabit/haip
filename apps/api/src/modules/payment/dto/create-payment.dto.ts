@@ -20,8 +20,8 @@ export class CreatePaymentDto {
   @IsNotEmpty()
   propertyId!: string;
 
-  @ApiProperty({ enum: ['credit_card', 'debit_card', 'cash', 'bank_transfer', 'city_ledger', 'vcc', 'other'] })
-  @IsEnum(['credit_card', 'debit_card', 'cash', 'bank_transfer', 'city_ledger', 'vcc', 'other'])
+  @ApiProperty({ enum: ['credit_card', 'debit_card', 'card_machine', 'pix', 'cash', 'bank_transfer', 'city_ledger', 'vcc', 'other'] })
+  @IsEnum(['credit_card', 'debit_card', 'card_machine', 'pix', 'cash', 'bank_transfer', 'city_ledger', 'vcc', 'other'])
   method!: string;
 
   @ApiProperty({ example: '150.00' })

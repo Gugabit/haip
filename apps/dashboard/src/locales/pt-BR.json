@@ -407,9 +407,11 @@
     "open": "Aberta",
     "paymentMethods": {
       "bank_transfer": "Transferência Bancária",
+      "card_machine": "Cartão (Maquininha)",
       "cash": "Dinheiro",
       "credit_card": "Cartão de Crédito",
-      "debit_card": "Cartão de Débito"
+      "debit_card": "Cartão de Débito",
+      "pix": "PIX"
     },
     "paymentStatuses": {
       "captured": "Recebido",
@@ -421,6 +423,7 @@
     "postCharge": "Lançar cobrança",
     "record": "Registrar",
     "recordPayment": "Registrar pagamento",
+    "recordPaymentCardHint": "Use \"Cartão (Maquininha)\" para cartões processados em maquininha física. Use Autorizar Cartão para pagamentos online/tokenizados.",
     "refund": "Reembolsar",
     "confirmRefund": "Reembolsar este pagamento?",
     "refundSuccess": "Pagamento reembolsado",
@@ -804,10 +807,12 @@
     "openHouseAccount": "Abrir conta interna",
     "paymentMethods": {
       "bankTransfer": "Transferência bancária",
+      "cardMachine": "Cartão (Maquininha)",
       "cash": "Dinheiro",
       "creditCard": "Cartão de crédito",
       "debitCard": "Cartão de débito",
-      "other": "Outro"
+      "other": "Outro",
+      "pix": "PIX"
     },
     "post": "Lançar",
     "postCharge": "Lançar cobrança",
